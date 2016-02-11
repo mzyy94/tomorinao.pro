@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="400" height="300" viewBox="0, 0, 400, 300">
-  <g id="レイヤー_1">
+  <g id="No preview available">
     <text transform="matrix(1, 0, 0, 1, 200, 150)">
-      <tspan x="-180" y="-12.5" font-family="Orbitron-Medium" font-size="48" fill="#020203">NO PREVIEW</tspan>
-      <tspan x="-165.048" y="45.5" font-family="Orbitron-Medium" font-size="48" fill="#020203">AVAILABLE</tspan>
+      <tspan x="-180" y="-12.5" font-family="Orbitron" font-size="48" fill="#020203">NO PREVIEW</tspan>
+      <tspan x="-165.048" y="45.5" font-family="Orbitron" font-size="48" fill="#020203">AVAILABLE</tspan>
     </text>
     <path d="M2.5,2.5 L398.5,2.5 L398.5,298.5 L2.5,298.5 L2.5,2.5 z" fill-opacity="0" stroke="#000000" stroke-width="2" stroke-dasharray="12,10"/>
   </g>
