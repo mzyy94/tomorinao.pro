@@ -29,3 +29,8 @@ footer * {
 footer *:not(:first-child)::before {
 	content: "-";
 }
+
+.screen_name {
+	display: none;
+	padding-left: 20px;
+}
