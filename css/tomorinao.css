@@ -6,6 +6,17 @@ time {
 	font-size: 1.2em;
 	display: block;
 }
+nav {
+	height: 42px;
+}
+nav * {
+	height: 24px;
+	display: inline-block;
+	vertical-align: text-top;
+	text-decoration: none;
+	color: #000;
+	font-size: 24px;
+}
 section:nth-child(even) {
 	background-color: #14A6C8;
 	color: #FFF;
@@ -26,8 +37,8 @@ footer * {
 	display: inline;
 	color: #FFF;
 }
-footer *:not(:first-child)::before {
-	content: "-";
+footer > *:not(:first-child)::before {
+	content: "- ";
 }
 
 .screen_name {
