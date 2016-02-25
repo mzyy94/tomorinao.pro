@@ -1,0 +1,25 @@
+.card {
+	margin-bottom: 20px;
+}
+
+td:nth-child(2n):not(:empty)::before {
+	content: "¥";
+}
+td#discount {
+	color: #F00;
+}
+td#discount:not(:empty)::before {
+	content: "-¥";
+}
+.quantity::before {
+	content: "x";
+}
+td > select {
+	margin: 0;
+	padding: 0;
+}
+
+label#giftlabel::before {
+	content: '¥' attr(data-price) ' ';
+	font-size: 1.5em;
+}
