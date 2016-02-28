@@ -23,3 +23,10 @@ label#giftlabel::before {
 	content: '¥' attr(data-price) ' ';
 	font-size: 1.5em;
 }
+
+#problem {
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: -webkit-crisp-edges;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: pixelated;
+}

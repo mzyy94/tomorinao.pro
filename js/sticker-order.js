@@ -74,41 +74,37 @@ function applyCoupon() {
 		value: flag.slice(0, ~~(flag.length / 3)),
 		background: '#000',
 		foreground: '#F00',
-		size: 10
+		size: 1
 	});
 	var qr1 = qr.canvas({
 		value: flag.slice(~~(flag.length / 3), ~~(flag.length / 3) * 2),
 		background: 'rgba(0,0,0,0)',
 		foreground: '#0F0',
-		size: 10
+		size: 1
 	});
 	var qr2 = qr.canvas({
 		value: flag.slice(~~(flag.length / 3) * 2),
 		background: 'rgba(0,0,0,0)',
 		foreground: '#00F',
-		size: 10
+		size: 1
 	});
 	var canvas = document.createElement("canvas");
-	canvas.width = 256;
-	canvas.height = 256;
-	var pos = {
-		x: (canvas.width - qr0.width) / 2,
-		y: (canvas.height - qr0.height) / 2,
-	}
+	canvas.width = 25;
+	canvas.height = 25;
 	ctx = canvas.getContext("2d");
 	ctx.globalCompositeOperation = "lighter";
 	ctx.fillStyle = "#000";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-	ctx.drawImage(qr0, pos.x, pos.y);
-	ctx.drawImage(qr1, pos.x, pos.y);
-	ctx.drawImage(qr2, pos.x, pos.y);
+	ctx.drawImage(qr0, 0, 0);
+	ctx.drawImage(qr1, 0, 0);
+	ctx.drawImage(qr2, 0, 0);
 
 	ctx.globalCompositeOperation = "difference";
 	ctx.drawImage(document.querySelector("#problem"), 0, 0);
 
 	var check = document.createElement("canvas");
-	check.width = 32;
-	check.height = 32;
+	check.width = 25;
+	check.height = 25;
 	ctx2 = check.getContext("2d");
 	ctx2.fillStyle = "#fff";
 	ctx2.fillRect(0, 0, check.width, check.height);
