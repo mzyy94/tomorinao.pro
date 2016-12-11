@@ -40,7 +40,21 @@ footer * {
 footer > *:not(:first-child)::before {
 	content: "- ";
 }
-
+[name=show_more] {
+	visibility: hidden;
+}
+[for=show_more] {
+	cursor: pointer;
+}
+[name=show_more]:checked ~ label {
+	display: none;
+}
+[name=show_more]:not(:checked) ~ div {
+	display: none;
+}
+[name=show_more]:checked ~ div {
+	display: block;
+}
 .screen_name {
 	display: none;
 	padding-left: 20px;
