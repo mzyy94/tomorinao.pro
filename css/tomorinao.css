@@ -17,6 +17,16 @@ nav * {
 	color: #000;
 	font-size: 24px;
 }
+header {
+	width: auto;
+	height: auto;
+	max-width: 60%;
+	max-height: 40%;
+	display: flex;
+	text-align: center;
+	float: none;
+	margin: auto;
+}
 section:nth-child(even) {
 	background-color: #14A6C8;
 	color: #FFF;
@@ -46,14 +56,19 @@ footer > *:not(:first-child)::before {
 [for=show_more] {
 	cursor: pointer;
 }
-[name=show_more]:checked ~ label {
+[name=show_more]:checked, [name=show_more]:checked ~ label {
 	display: none;
 }
 [name=show_more]:not(:checked) ~ div {
-	display: none;
+	visibility: hidden;
+	height: 0;
+	width: 0;
 }
 [name=show_more]:checked ~ div {
-	display: block;
+	visibility: visible;
+	height: auto;
+	width: auto;
+	overflow: hidden;
 }
 .screen_name {
 	display: none;
