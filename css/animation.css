@@ -43,6 +43,14 @@ svg #Charlotte {
 	animation: visible 1s ease-in 2s forwards;
 	-webkit-animation: visible 1s ease-in 2s forwards;
 }
+@media all and (-ms-high-contrast:none) {
+	svg #TomoriNao path {
+		fill: inherit !important;
+		opacity: 0;
+		animation: visible 1s ease-in 2s forwards;
+		-webkit-animation: visible 1s ease-in 2s forwards;
+	}
+}
 
 @keyframes visible {
 	100% { opacity: 1; }
