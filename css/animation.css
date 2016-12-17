@@ -44,7 +44,7 @@ svg #Charlotte {
 	-webkit-animation: visible 1s ease-in 2s forwards;
 }
 
-@-keyframes visible {
+@keyframes visible {
 	100% { opacity: 1; }
 }
 @keyframes dash {
