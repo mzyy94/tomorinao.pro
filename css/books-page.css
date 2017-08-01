@@ -1,0 +1,143 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body, main {
+	width: 100%;
+	height: 100%;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	font-family: 'Orbitron', sans-serif;
+	text-shadow: 0px 0px 8px #14A6C8;
+	background: black;
+	animation: fadeIn 2s ease 0s 1 normal;
+	-webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+@keyframes fadeIn {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+@-webkit-keyframes fadeIn {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+#background {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d155c+0,43315b+10,3f4175+27,3f4175+36,22172b+100 */
+	background: #6d155c; /* Old browsers */
+	background: -moz-linear-gradient(15deg, #6d155c 0%, #43315b 10%, #3f4175 27%, #3f4175 36%, #22172b 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(15deg, #6d155c 0%,#43315b 10%,#3f4175 27%,#3f4175 36%,#22172b 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(15deg, #6d155c 0%,#43315b 10%,#3f4175 27%,#3f4175 36%,#22172b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d155c', endColorstr='#22172b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	backdrop-filter: blur(1px);
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
+}
+#background > canvas.particles-js-canvas-el {
+	width:100%;
+	height:100%;
+	position:absolute;
+	background: rgba(64,64,255,0.1);
+}
+main::after {
+	content: '';
+	border: 50px solid #fff;
+	border-image: url('/image/border.svg') 150 round;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+	position: fixed;
+}
+main::before {
+	content: '';
+	width: 100%;
+	height: 20px;
+	left: 0;
+	top: 0;
+	filter: blur(5px) drop-shadow(0px 0px 10px rgba(0,0,0,0));
+	position: fixed;
+}
+main {
+	height: calc(100% - 60px);
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #DDDDEE;
+	padding: 30px;
+}
+
+header {
+	display: none;
+}
+
+@media screen and (min-width:1200px){
+	header {
+		display: block;
+		position: absolute;
+		width: 300px;
+		max-width: 30%;
+		left: 0;
+		top: 0;
+	}
+	section h1 {
+		font-size: 3em;
+	}
+	section p {
+		font-size: 1em;
+	}
+}
+
+img[alt="logo"] {
+	margin: 30px;
+	-webkit-filter: drop-shadow(0px 0px 8px #14A6C8);
+	filter: drop-shadow(0px 0px 8px #14A6C8);
+}
+footer {
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	color: #FFF;
+	left: 0;
+	font-size: 0.6em;
+}
+footer * {
+	display: inline;
+	color: #FFF;
+}
+footer > *:not(:first-child)::before {
+	content: "- ";
+}
+
+section {
+	text-align: center;
+}
+h1 {
+	font-size: 1.6em;
+}
+section p {
+	font-size: 0.8em;
+}
+figure.preview img {
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(80%, transparent) , to(rgba(250, 250, 250, 0.1)));
+	height: 375px;
+	max-height: 50vh;
+	margin-bottom: 1vh;
+}
