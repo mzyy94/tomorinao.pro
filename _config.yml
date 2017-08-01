@@ -1,0 +1,15 @@
+title: Team TomoriNao
+description: Team TomoriNao's official site
+author: TomoriNao
+baseurl: ""
+url: "https://tomorinao.pro"
+twitter_username: tomorinao_pro
+
+markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - CNAME
+  - LICENSE.md
+  - Gemfile
+  - Gemfile.lock

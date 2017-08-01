@@ -1,7 +1,14 @@
+---
+---
 body > section:not(:first-of-type) {
 	opacity: 0;
 	animation: visible 1s ease-in 2s forwards;
 	-webkit-animation: visible 1s ease-in 2s forwards;
+}
+
+@mixin stroke-dash($value) {
+	stroke-dasharray: $value;
+	stroke-dashoffset: $value;
 }
 
 svg #TomoriNao path {
@@ -9,34 +16,27 @@ svg #TomoriNao path {
 	stroke-linecap: round;
 	animation: dash 1.6s ease-in 0.4s forwards, color 1s ease-in 2.2s forwards;
 	-webkit-animation: dash 1.6s ease-in 0.4s forwards, color 1s ease-in 2.2s forwards;
-}
-svg #TomoriNao path[name=T] {
-	stroke-dasharray: 290;
-	stroke-dashoffset: 290;
-}
-svg #TomoriNao path[name=o] {
-	stroke-dasharray: 216;
-	stroke-dashoffset: 216;
-}
-svg #TomoriNao path[name=m] {
-	stroke-dasharray: 478;
-	stroke-dashoffset: 478;
-}
-svg #TomoriNao path[name=r] {
-	stroke-dasharray: 186;
-	stroke-dashoffset: 186;
-}
-svg #TomoriNao path[name=i] {
-	stroke-dasharray: 136;
-	stroke-dashoffset: 136;
-}
-svg #TomoriNao path[name=N] {
-	stroke-dasharray: 476;
-	stroke-dashoffset: 476;
-}
-svg #TomoriNao path[name=a] {
-	stroke-dasharray: 442;
-	stroke-dashoffset: 442;
+	&[name=T] {
+		@include stroke-dash(290);
+	}
+	&[name=o] {
+		@include stroke-dash(216);
+	}
+	&[name=m] {
+		@include stroke-dash(478);
+	}
+	&[name=r] {
+		@include stroke-dash(186);
+	}
+	&[name=i] {
+		@include stroke-dash(136);
+	}
+	&[name=N] {
+		@include stroke-dash(476);
+	}
+	&[name=a] {
+		@include stroke-dash(442);
+	}
 }
 svg #Charlotte {
 	opacity: 0;
@@ -84,24 +84,8 @@ svg #Charlotte {
 	transition-duration: 0.5s;
 	transition-timing-function: ease;
 }
-[name=show_more]:checked + label + * + * * {
-	transition-delay: 0.1s;
-}
-[name=show_more]:checked + label + * + * + * * {
-	transition-delay: 0.2s;
-}
-[name=show_more]:checked + label + * + * + * + * * {
-	transition-delay: 0.3s;
-}
-[name=show_more]:checked + label + * + * + * + * + * * {
-	transition-delay: 0.4s;
-}
-[name=show_more]:checked + label + * + * + * + * + * + * * {
-	transition-delay: 0.5s;
-}
-[name=show_more]:checked + label + * + * + * + * + * + * + * * {
-	transition-delay: 0.6s;
-}
-[name=show_more]:checked + label + * + * + * + * + * + * + * + * * {
-	transition-delay: 0.7s;
+@for $i from 1 through {{ site.data.news | size | minus: 4 }} {
+	[name=show_more]:checked + label ~ *:nth-of-type(#{$i + 4}) + * * {
+		transition-delay: #{$i / 10}s;
+	}
 }
