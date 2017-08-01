@@ -1,91 +1,77 @@
 ---
 image: https://tomorinao.pro/image/tomorinao-500.png
+layout: default
+stylesheets:
+  - /css/animation.css
+  - /css/skeleton.css
+  - /css/tomorinao.css
+powered_by:
+  - "[Skeleton](http://getskeleton.com/)"
+  - "[Jekyll](https://jekyllrb.com/)"
 ---
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="generator" content="jekyll">
-	<link rel="stylesheet" href="/css/normalize.css">
-	<link rel="stylesheet" href="/css/animation.css">
-	<link rel="stylesheet" href="/css/skeleton.css">
-	<link rel="stylesheet" href="/css/tomorinao.css">
-	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
-	<link rel="icon" type="image/png" href="/image/favicon.png">
-	{% seo %}
-</head>
-<body>
-	<section>
-		<header>
-			{% include tomorinao.svg %}
-		</header>
-	</section>
-	<section>
-		<article class="container">
-			<h2>NEWS</h2>
-			{% for news in site.data.news limit:4 %}
-			<div>
-				<time datetime="{{ news.datetime }}">{{ news.date }}</time>
-				<p>{{ news.title }}</p>
+<section>
+	<header>
+		{% include tomorinao.svg %}
+	</header>
+</section>
+<section>
+	<article class="container">
+		<h2>NEWS</h2>
+		{% for news in site.data.news limit:4 %}
+		<div>
+			<time datetime="{{ news.datetime }}">{{ news.date }}</time>
+			<p>{{ news.title }}</p>
+		</div>
+		{% endfor %}
+		<input type="checkbox" name="show_more" id="show_more"><label for="show_more">More...</label>
+		{% for news in site.data.news offset:4 %}
+		<div>
+			<time datetime="{{ news.datetime }}">{{ news.date }}</time>
+			<p>{{ news.title }}</p>
+		</div>
+		{% endfor %}
+	</article>
+</section>
+<section>
+	<article class="container">
+		<h2>Members</h2>
+		<ul>
+		{% for member in site.data.members %}
+			<li><a href="{{ member.url }}">TomoriNao</a><span class="screen_name">{{ member.name }}</span></li>
+		{% endfor %}
+		</ul>
+	</article>
+</section>
+<section>
+	<article class="container">
+		<h2>Write-ups</h2>
+		{% for writeup in site.data.writeups %}
+		<h3>{{ writeup.title }}</h3>
+		<ul>
+			{{ writeup.page | markdownify | replace: 'p>', 'li>' }}
+		</ul>
+		{% endfor %}
+	</article>
+</section>
+<section>
+	<article class="container">
+		<h2>Goods</h2>
+		<div class="row">
+			<div class="one-third column">
+				<h3>Sticker</h3>
+				<img src="/image/preview-sticker.jpg" alt="Sticker preview" class="u-max-full-width" />
+				<p>Size: 60mm x 60mm</p>
+				<a href="https://tomorinao.pro/goods/sticker.html" class="button">Detail</a>
 			</div>
-			{% endfor %}
-			<input type="checkbox" name="show_more" id="show_more"><label for="show_more">More...</label>
-			{% for news in site.data.news offset:4 %}
-			<div>
-				<time datetime="{{ news.datetime }}">{{ news.date }}</time>
-				<p>{{ news.title }}</p>
+			<div class="one-third column">
+				<h3>Sticker++</h3>
+				<img src="/image/preview-sticker++.jpg" alt="Sticker++ preview" class="u-max-full-width" />
+				<p>Size: 60mm x 60mm</p>
+				<button disabled="disabled">Not available</button>
 			</div>
-			{% endfor %}
-		</article>
-	</section>
-	<section>
-		<article class="container">
-			<h2>Members</h2>
-			<ul>
-			{% for member in site.data.members %}
-				<li><a href="{{ member.url }}">TomoriNao</a><span class="screen_name">{{ member.name }}</span></li>
-			{% endfor %}
-			</ul>
-		</article>
-	</section>
-	<section>
-		<article class="container">
-			<h2>Write-ups</h2>
-			{% for writeup in site.data.writeups %}
-			<h3>{{ writeup.title }}</h3>
-			<ul>
-				{{ writeup.page | markdownify | replace: 'p>', 'li>' }}
-			</ul>
-			{% endfor %}
-		</article>
-	</section>
-	<section>
-		<article class="container">
-			<h2>Goods</h2>
-			<div class="row">
-				<div class="one-third column">
-					<h3>Sticker</h3>
-					<img src="/image/preview-sticker.jpg" alt="Sticker preview" class="u-max-full-width" />
-					<p>Size: 60mm x 60mm</p>
-					<a href="https://tomorinao.pro/goods/sticker.html" class="button">Detail</a>
-				</div>
-				<div class="one-third column">
-					<h3>Sticker++</h3>
-					<img src="/image/preview-sticker++.jpg" alt="Sticker++ preview" class="u-max-full-width" />
-					<p>Size: 60mm x 60mm</p>
-					<button disabled="disabled">Not available</button>
-				</div>
-				<div class="one-third column">
-				</div>
+			<div class="one-third column">
 			</div>
-		</article>
-	</section>
-	<footer>
-		<span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
-		<address><a href="https://twitter.com/{{ site.twitter.username }}">{{ site.author }}</a></address>
-		<span>Powered by <a href="http://getskeleton.com/">Skeleton</a> and <a href="https://jekyllrb.com/">Jekyll</a></span>
-	</footer>
-</body>
-</html>
+		</div>
+	</article>
+</section>
+{% include footer.html %}

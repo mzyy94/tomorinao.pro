@@ -1,0 +1,5 @@
+<footer>
+	<span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
+	<address><a href="https://twitter.com/{{ site.twitter.username }}">{{ site.author }}</a></address>
+	{{ page.powered_by | array_to_sentence_string | markdownify | replace: '<p>', '<p>Powered by ' }}
+</footer>

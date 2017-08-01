@@ -1,221 +1,206 @@
 ---
 title: "Goods: Sticker"
 image: https://tomorinao.pro/image/preview-sticker.jpg
+layout: default
+stylesheets:
+  - /css/sticker-order.css
+  - /css/skeleton.css
+  - /css/tomorinao.css
+powered_by:
+  - "[Skeleton](http://getskeleton.com/)"
+  - "[Jekyll](https://jekyllrb.com/)"
+  - "[card](http://jessepollak.github.io/card/)"
+  - "[card-validator](https://github.com/braintree/card-validator)"
+  - "[JSEncrypt](http://travistidwell.com/jsencrypt/)"
+  - "[jsSHA](http://caligatio.github.com/jsSHA/)"
+  - "[qr.js](http://neocotic.com/qr.js)"
 ---
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="generator" content="jekyll">
-	<link rel="stylesheet" href="/css/normalize.css">
-	<link rel="stylesheet" href="/css/sticker-order.css">
-	<link rel="stylesheet" href="/css/skeleton.css">
-	<link rel="stylesheet" href="/css/tomorinao.css">
-	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
-	<link rel="icon" type="image/png" href="/image/favicon.png">
-	{% seo %}
-</head>
-<body>
-	<nav>
-		<a href="/">
-				<img src="/image/tomorinao.svg" alt="Team TomoriNao Logo" />
-				<h1>Team Tomori<wbr>Nao</h1>
-			</a>
-	</nav>
-	<section>
-		<article class="container">
-			<h2>Goods - Sticker</h2>
+<nav>
+	<a href="/">
+			<img src="/image/tomorinao.svg" alt="Team TomoriNao Logo" />
+			<h1>Team Tomori<wbr>Nao</h1>
+		</a>
+</nav>
+<section>
+	<article class="container">
+		<h2>Goods - Sticker</h2>
+		<div class="row">
+			<div class="one-half column">
+				<img src="/image/preview-sticker.jpg" alt="Sticker preview" class="u-max-full-width" />
+			</div>
+			<div class="one-half column">
+				<ul>
+					<li>Coated fine paper (90 g/m<sup>2</sup>) with lamination.</li>
+					<li>Easy-to-use size (60mm x 60mm).</li>
+					<li>Buyer defined flexible pricing within the range of 10 Yen and 50 Yen.</li>
+				</ul>
+			</div>
+		</div>
+	</article>
+</section>
+<section>
+	<div class="container">
+		<h2>Get sticker</h2>
+		<p>You can get a free sticker on offline events which teammates attended.</p>
+		<p>Another way to get it, online order form at Booth.pm. <span style="color: red">(Coming soon.)</span></p>
+		<p>OR, you can order it below.</p>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<h2>Oder Step</h2>
+		<h3>1. Fill order form below</h3>
+		<h3>2. Generate order request</h3>
+		<h3>3. Send order request via Twitter DM</h3>
+		<a class="button" target="_blank" href="https://twitter.com/tomorinao_pro">DM order request</a>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<h2>Order Form</h2>
+		<form onsubmit="return createRequest()" action="?">
+			<h3>Shipping address</h3>
+			<label for="name">Your name</label>
+			<input class="u-full-width" type="text" placeholder="Tomori Nao" id="name" required maxlength="28">
+			<label for="name">Email</label>
+			<input class="u-full-width" type="email" placeholder="example@tomorinao.pro" id="email" required maxlength="60">
 			<div class="row">
-				<div class="one-half column">
-					<img src="/image/preview-sticker.jpg" alt="Sticker preview" class="u-max-full-width" />
+				<div class="six columns">
+					<label for="postcode">Postal code</label>
+					<input class="u-full-width" type="text" placeholder="123-4567" id="postcode" pattern="^\d{3}-?\d{4}$" required maxlength="8">
 				</div>
-				<div class="one-half column">
-					<ul>
-						<li>Coated fine paper (90 g/m<sup>2</sup>) with lamination.</li>
-						<li>Easy-to-use size (60mm x 60mm).</li>
-						<li>Buyer defined flexible pricing within the range of 10 Yen and 50 Yen.</li>
-					</ul>
+				<div class="six columns">
+					<label for="country">Country</label>
+					<select class="u-full-width" id="country" required>
+							<option value="japan">Japan</option>
+						</select>
 				</div>
 			</div>
-		</article>
-	</section>
-	<section>
-		<div class="container">
-			<h2>Get sticker</h2>
-			<p>You can get a free sticker on offline events which teammates attended.</p>
-			<p>Another way to get it, online order form at Booth.pm. <span style="color: red">(Coming soon.)</span></p>
-			<p>OR, you can order it below.</p>
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h2>Oder Step</h2>
-			<h3>1. Fill order form below</h3>
-			<h3>2. Generate order request</h3>
-			<h3>3. Send order request via Twitter DM</h3>
-			<a class="button" target="_blank" href="https://twitter.com/tomorinao_pro">DM order request</a>
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h2>Order Form</h2>
-			<form onsubmit="return createRequest()" action="?">
-				<h3>Shipping address</h3>
-				<label for="name">Your name</label>
-				<input class="u-full-width" type="text" placeholder="Tomori Nao" id="name" required maxlength="28">
-				<label for="name">Email</label>
-				<input class="u-full-width" type="email" placeholder="example@tomorinao.pro" id="email" required maxlength="60">
-				<div class="row">
-					<div class="six columns">
-						<label for="postcode">Postal code</label>
-						<input class="u-full-width" type="text" placeholder="123-4567" id="postcode" pattern="^\d{3}-?\d{4}$" required maxlength="8">
-					</div>
-					<div class="six columns">
-						<label for="country">Country</label>
-						<select class="u-full-width" id="country" required>
-								<option value="japan">Japan</option>
-							</select>
-					</div>
+			<div class="row">
+				<div class="six columns">
+					<label for="state">State/Pref.</label>
+					<input class="u-full-width" type="text" placeholder="Tokyo" id="state" required maxlength="14">
 				</div>
-				<div class="row">
-					<div class="six columns">
-						<label for="state">State/Pref.</label>
-						<input class="u-full-width" type="text" placeholder="Tokyo" id="state" required maxlength="14">
-					</div>
-					<div class="six columns">
-						<label for="city">City</label>
-						<input class="u-full-width" type="text" placeholder="Chiyoda" id="city" required maxlength="24">
-					</div>
+				<div class="six columns">
+					<label for="city">City</label>
+					<input class="u-full-width" type="text" placeholder="Chiyoda" id="city" required maxlength="24">
 				</div>
-				<label for="address">Address</label>
-				<input class="u-full-width" type="text" placeholder="Chiyoda 1-1-1" id="address" required maxlength="60">
-				<hr>
-				<h3>Discount CTF</h3>
-				<img src="/image/q1.png" alt="q1" id="problem" width="250" height="250" />
-				<p>Expiration date: 23:59:59 on December, 31 2016 (JST)</p>
-				<label for="coupon">Flag</label>
-				<div class="row">
-					<div class="eight columns">
-						<input class="u-full-width" type="text" placeholder="TomoriNao{*********************}" pattern="^TomoriNao\{.+\}$" id="coupon">
-					</div>
-					<div class="four columns">
-						<input type="button" class="u-full-width" onclick="applyCoupon()" value="Apply" />
-					</div>
+			</div>
+			<label for="address">Address</label>
+			<input class="u-full-width" type="text" placeholder="Chiyoda 1-1-1" id="address" required maxlength="60">
+			<hr>
+			<h3>Discount CTF</h3>
+			<img src="/image/q1.png" alt="q1" id="problem" width="250" height="250" />
+			<p>Expiration date: 23:59:59 on December, 31 2016 (JST)</p>
+			<label for="coupon">Flag</label>
+			<div class="row">
+				<div class="eight columns">
+					<input class="u-full-width" type="text" placeholder="TomoriNao{*********************}" pattern="^TomoriNao\{.+\}$" id="coupon">
 				</div>
-				<div id="result"></div>
-				<hr>
-				<h3>Order Summary</h3>
-				<table class="u-full-width">
-					<tbody>
-						<tr>
-							<td>Sticker</td>
-							<td style="padding: 0;">
-								<select id="price" onchange="updateTotal()">
-										<option value="10" selected="selected">10</option>
-										<option value="20">20</option>
-										<option value="30">30</option>
-										<option value="40">40</option>
-										<option value="50">50</option>
-									</select>
-							</td>
-							<td class="quantity">
-								<select id="quantity" onchange="updateTotal()">
-										<option value="1" selected="selected">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-									</select>
-							</td>
-							<td id="subtotal">10</td>
-						</tr>
-						<tr>
-							<td>Discount</td>
-							<td></td>
-							<td></td>
-							<td id="discount">0</td>
-						</tr>
-						<tr>
-							<td>Shipping</td>
-							<td>100</td>
-							<td></td>
-							<td>100</td>
-						</tr>
-						<tr>
-							<td style="font-weight:bold; font-size: larger;">Total</td>
-							<td></td>
-							<td></td>
-							<td id="total" style="font-weight:bold; font-size: larger; color: #0FF;">110</td>
-						</tr>
-					</tbody>
-				</table>
-				<h3>Payment</h3>
-				<label for="method">Payment method</label>
-				<select id="method" onchange="updateMethod()">
-						<option value="amazon-egift" selected="selected">Amazon Gift Code</option>
-						<option value="credit-card">Credit Card (Pay.jp)</option>
-					</select>
-				<div id="methods">
-					<div id="amazon-egift">
-						<label for="giftcode" id="giftlabel" data-price="110">Gift Code</label>
-						<input class="u-full-width" type="text" placeholder="XXXX-XXXXXX-XXXX" id="giftcode" pattern="^[A-Z0-9]{4}-[A-Z0-9]{6}-[A-Z0-9]{4,5}$"
-						 maxlength="17" required>
-					</div>
-					<div id="credit-card" hidden="hidden">
-						<h4 style="color: red">NOTICE: Currently not supported</h4>
-						<div class="card"></div>
-						<label for="cardNumber">Card Number</label>
-						<input class="u-full-width" type="text" placeholder="XXXX XXXX XXXX XXXX" id="cardNumber" pattern="[0-9 ]*" maxlength="20"
-						 required>
-						<div class="row">
-							<div class="six columns">
-								<label for="name2">Name</label>
-								<input class="u-full-width" type="text" placeholder="NAO TOMORI" id="name2" required maxlength="24">
-							</div>
-							<div class="three columns">
-								<label for="expiry">Expiration</label>
-								<input class="u-full-width" type="text" id="expiry" placeholder="XX / XX" required maxlength="8">
-							</div>
-							<div class="three columns">
-								<label for="cvc">CVC</label>
-								<input class="u-full-width" type="text" placeholder="XXX" id="cvc" pattern="[0-9]*" required maxlength="4">
-							</div>
+				<div class="four columns">
+					<input type="button" class="u-full-width" onclick="applyCoupon()" value="Apply" />
+				</div>
+			</div>
+			<div id="result"></div>
+			<hr>
+			<h3>Order Summary</h3>
+			<table class="u-full-width">
+				<tbody>
+					<tr>
+						<td>Sticker</td>
+						<td style="padding: 0;">
+							<select id="price" onchange="updateTotal()">
+									<option value="10" selected="selected">10</option>
+									<option value="20">20</option>
+									<option value="30">30</option>
+									<option value="40">40</option>
+									<option value="50">50</option>
+								</select>
+						</td>
+						<td class="quantity">
+							<select id="quantity" onchange="updateTotal()">
+									<option value="1" selected="selected">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+						</td>
+						<td id="subtotal">10</td>
+					</tr>
+					<tr>
+						<td>Discount</td>
+						<td></td>
+						<td></td>
+						<td id="discount">0</td>
+					</tr>
+					<tr>
+						<td>Shipping</td>
+						<td>100</td>
+						<td></td>
+						<td>100</td>
+					</tr>
+					<tr>
+						<td style="font-weight:bold; font-size: larger;">Total</td>
+						<td></td>
+						<td></td>
+						<td id="total" style="font-weight:bold; font-size: larger; color: #0FF;">110</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>Payment</h3>
+			<label for="method">Payment method</label>
+			<select id="method" onchange="updateMethod()">
+					<option value="amazon-egift" selected="selected">Amazon Gift Code</option>
+					<option value="credit-card">Credit Card (Pay.jp)</option>
+				</select>
+			<div id="methods">
+				<div id="amazon-egift">
+					<label for="giftcode" id="giftlabel" data-price="110">Gift Code</label>
+					<input class="u-full-width" type="text" placeholder="XXXX-XXXXXX-XXXX" id="giftcode" pattern="^[A-Z0-9]{4}-[A-Z0-9]{6}-[A-Z0-9]{4,5}$"
+					 maxlength="17" required>
+				</div>
+				<div id="credit-card" hidden="hidden">
+					<h4 style="color: red">NOTICE: Currently not supported</h4>
+					<div class="card"></div>
+					<label for="cardNumber">Card Number</label>
+					<input class="u-full-width" type="text" placeholder="XXXX XXXX XXXX XXXX" id="cardNumber" pattern="[0-9 ]*" maxlength="20"
+					 required>
+					<div class="row">
+						<div class="six columns">
+							<label for="name2">Name</label>
+							<input class="u-full-width" type="text" placeholder="NAO TOMORI" id="name2" required maxlength="24">
 						</div>
-						<input type="button" onclick="validateCreditCard()" value="Create Token" />
+						<div class="three columns">
+							<label for="expiry">Expiration</label>
+							<input class="u-full-width" type="text" id="expiry" placeholder="XX / XX" required maxlength="8">
+						</div>
+						<div class="three columns">
+							<label for="cvc">CVC</label>
+							<input class="u-full-width" type="text" placeholder="XXX" id="cvc" pattern="[0-9]*" required maxlength="4">
+						</div>
 					</div>
+					<input type="button" onclick="validateCreditCard()" value="Create Token" />
 				</div>
-				<hr>
-				<input class="button-primary" type="submit" value="Generate order request">
-				<label for="exampleMessage">Oder Request</label>
-				<textarea class="u-full-width" placeholder="" cols="50" rows="12" readonly="readonly" style="height: auto;" id="message"></textarea>
-				<a class="button" target="_blank" href="https://twitter.com/tomorinao_pro">DM order request</a>
-			</form>
-		</div>
-	</section>
-	<footer>
-		<span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
-		<address><a href="https://twitter.com/{{ site.twitter.username }}">{{ site.author }}</a></address>
-		<span>Powered by <a href="http://getskeleton.com/">Skeleton</a>,
-				<a href="http://jessepollak.github.io/card/">card</a>,
-				<a href="https://github.com/braintree/card-validator">card-validator</a>,
-				<a href="http://travistidwell.com/jsencrypt/">JSEncrypt</a>,
-				<a href="http://caligatio.github.com/jsSHA/">jsSHA</a> and
-				<a href="http://neocotic.com/qr.js">qr.js</a>.
-			</span>
-	</footer>
-	<script src="https://js.pay.jp/"></script>
-	<script src="/js/card-validator.js"></script>
-	<script src="/js/card.js"></script>
-	<script src="/js/jsencrypt.js"></script>
-	<script src="/js/qr.js"></script>
-	<script src="/js/sha512.js"></script>
-	<script src="/js/sticker-order.js"></script>
-</body>
-</html>
+			</div>
+			<hr>
+			<input class="button-primary" type="submit" value="Generate order request">
+			<label for="exampleMessage">Oder Request</label>
+			<textarea class="u-full-width" placeholder="" cols="50" rows="12" readonly="readonly" style="height: auto;" id="message"></textarea>
+			<a class="button" target="_blank" href="https://twitter.com/tomorinao_pro">DM order request</a>
+		</form>
+	</div>
+</section>
+{% include footer.html %}
+<script src="https://js.pay.jp/"></script>
+<script src="/js/card-validator.js"></script>
+<script src="/js/card.js"></script>
+<script src="/js/jsencrypt.js"></script>
+<script src="/js/qr.js"></script>
+<script src="/js/sha512.js"></script>
+<script src="/js/sticker-order.js"></script>
