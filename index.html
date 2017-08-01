@@ -1,29 +1,20 @@
 ---
+image: https://tomorinao.pro/image/tomorinao-500.png
 ---
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<title>Team TomoriNao</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="generator" content="jekyll">
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/animation.css">
 	<link rel="stylesheet" href="/css/skeleton.css">
 	<link rel="stylesheet" href="/css/tomorinao.css">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
 	<link rel="icon" type="image/png" href="/image/favicon.png">
-	<meta name="author" content="TomoriNao">
-	<meta name="keywords" content="TomoriNao,CTF,Capture the Flag">
-	<meta name="description" content="Team TomoriNao's official site">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="generator" content="vim">
-	<meta name="robots" content="index,follow">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@tomorinao_pro">
-	<meta name="twitter:creator" content="@tomorinao_pro">
-	<meta name="twitter:title" content="Team TomoriNao">
-	<meta name="twitter:description" content="Team TomoriNao's official site">
-	<meta name="twitter:image" content="http://tomorinao.pro/image/tomorinao-500.png">
+	{% seo %}
 </head>
 <body>
 	<section>
@@ -93,7 +84,7 @@
 	</section>
 	<footer>
 		<span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
-		<address><a href="https://twitter.com/{{ twitter_username }}">{{ site.author }}</a></address>
+		<address><a href="https://twitter.com/{{ site.twitter.username }}">{{ site.author }}</a></address>
 		<span>Powered by <a href="http://getskeleton.com/">Skeleton</a> and <a href="https://jekyllrb.com/">Jekyll</a></span>
 	</footer>
 </body>

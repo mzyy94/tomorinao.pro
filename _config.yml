@@ -3,11 +3,13 @@ description: Team TomoriNao's official site
 author: TomoriNao
 baseurl: ""
 url: "https://tomorinao.pro"
-twitter_username: tomorinao_pro
+twitter:
+  username: tomorinao_pro
 
 markdown: kramdown
 gems:
-  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 exclude:
   - CNAME
   - LICENSE.md
