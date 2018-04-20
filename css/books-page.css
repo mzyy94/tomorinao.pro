@@ -146,7 +146,6 @@ figure.preview img {
 
 span {
 	display: inline-block;
-	padding-top: 2em;
 }
 a[href] {
 	color: white;
@@ -178,4 +177,27 @@ input[type="radio"]:checked + section {
 span > label:not(:first-child)::before {
 	content: "-";
 	color: #DDDDEE;
+}
+a[href*="amazon"] {
+	display: block;
+	width: 150px;
+	margin: 0.5em auto;
+}
+a[href*="amazon"] img {
+	border-radius: 10px;
+	width: 150px;
+	height: 50px;
+}
+@media screen and (max-width: 480px)  {
+	section p {
+		font-size: 0.6em;
+	}
+	a[href*="amazon"] {
+		width: 90px;
+	}
+	a[href*="amazon"] img {
+		width: 90px;
+		height: 30px;
+		border-radius: 6px;
+	}
 }
