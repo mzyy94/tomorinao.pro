@@ -12,12 +12,15 @@ permalink: "/survey/"
 </head>
 <body>
     <script>
-    if (location.hash == "#2") { 
-      location.href="https://docs.google.com/forms/d/e/1FAIpQLSdRhew22L014_0roJrJqaS2os7NZO7_8k65TX6um5ECSan6NQ/viewform"
-    } else if (location.hash == "#3") {
-      location.href="https://docs.google.com/forms/d/e/1FAIpQLSfnPiAQnSOaT8cAmvIATmtp5AA5KwRg_MItPCCVWK4HkwijEg/viewform"
-    } else {
-      location.href="/"
+    switch (location.hash) {
+        case "#2":
+        case "#vol2":
+            location.href="https://docs.google.com/forms/d/e/1FAIpQLSdRhew22L014_0roJrJqaS2os7NZO7_8k65TX6um5ECSan6NQ/viewform";
+            break;
+        case "#3":
+        case "#vol3":
+            location.href="https://docs.google.com/forms/d/e/1FAIpQLSfnPiAQnSOaT8cAmvIATmtp5AA5KwRg_MItPCCVWK4HkwijEg/viewform";
+            break;
     }
     </script>
 </body>
